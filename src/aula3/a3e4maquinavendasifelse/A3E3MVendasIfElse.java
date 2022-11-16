@@ -1,0 +1,64 @@
+package aula3.a3e4maquinavendasifelse;
+
+import aula3.a3e3maquinavendas.BebidasSw;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class A3E3MVendasIfElse {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("\n<<<<<<MÁQUINA DE VENDA DE BEBIDAS>>>>>>\n");
+
+        System.out.println("Opções de bebidas: ");
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.COCA_COLA.getIndice(), BebidasSw.COCA_COLA.getNome(), BebidasSw.COCA_COLA.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.COCA_COLA_ZERO.getIndice(), BebidasSw.COCA_COLA_ZERO.getNome(), BebidasSw.COCA_COLA_ZERO.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.PEPSI.getIndice(), BebidasSw.PEPSI.getNome(), BebidasSw.PEPSI.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.GUARANA.getIndice(), BebidasSw.GUARANA.getNome(), BebidasSw.GUARANA.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.FANTA.getIndice(), BebidasSw.FANTA.getNome(), BebidasSw.FANTA.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.AGUA.getIndice(), BebidasSw.AGUA.getNome(), BebidasSw.AGUA.getValor());
+
+
+        System.out.println("\nSelecione o número da opção desejada: ");
+
+        int opcaoSelecionada = 0;
+
+        do {
+            try {
+                opcaoSelecionada = sc.nextInt();
+            } catch (InputMismatchException error) {
+                sc.nextLine();
+                System.out.println("Opção invalida. Digite novamente:");
+            }
+        }
+        while (opcaoSelecionada == 0);
+
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<< PEDIDO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        itemSelecionado(opcaoSelecionada);
+
+        System.out.println("____________________________________________________________________");
+        sc.close();
+
+    }
+
+    public static void itemSelecionado(int opcaoAlvo) {
+        if (opcaoAlvo == 1) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.COCA_COLA.getNome(), BebidasSw.COCA_COLA.getValor());
+        } else if (opcaoAlvo == 2) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.COCA_COLA_ZERO.getNome(), BebidasSw.COCA_COLA_ZERO.getValor());
+        } else if (opcaoAlvo == 3) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.PEPSI.getNome(), BebidasSw.PEPSI.getValor());
+        } else if (opcaoAlvo == 4) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.GUARANA.getNome(), BebidasSw.GUARANA.getValor());
+        } else if (opcaoAlvo == 5) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.FANTA.getNome(), BebidasSw.FANTA.getValor());
+        } else if (opcaoAlvo == 6) {
+            System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n", BebidasSw.AGUA.getNome(), BebidasSw.AGUA.getValor());
+        } else {
+            System.out.println("Opção inválida.");
+        }
+    }
+}
