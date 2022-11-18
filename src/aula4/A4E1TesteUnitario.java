@@ -22,7 +22,8 @@ public class A4E1TesteUnitario {
 
   static void testeUnitarioVoto(){
         //array com idades para testar
-        int [] idadesTestar = {18,70,16,16,71,17,15,-15,16};
+        //nt [] idadesTestar = {18,70,16,16,71,17,15,-15,16}; //com falhas
+        int [] idadesTestar = {18,70,34,16,71,100,15,-15,4}; //todos sucesso
 
         //array com resultados esperados
         String [] saidasEsperadas = {"Voto obrigatório", "Voto obrigatório", "Voto obrigatório", "Voto  facultativo", "Voto  facultativo", "Voto  facultativo", "Sem direito a votar",
@@ -34,7 +35,8 @@ public class A4E1TesteUnitario {
         int totalFalhas = 0;
 
       //resultado
-      String [] resultadosFalha = new String[10];
+      String [] resultados = new String[9];
+
 
       for (int i = 0; i< idadesTestar.length; i++){
 
@@ -44,17 +46,19 @@ public class A4E1TesteUnitario {
           } else {
               System.out.println("Teste número " + (i+1) + " = Falhou");
               totalFalhas ++;
-              resultadosFalha [i] = saidasEsperadas [i];
           }
 
       }
-      System.out.println("Total de testes que falharam = " + totalFalhas);
+
 
 
        if (totalFalhas == 0){
+           System.out.println("__________________________________");
            System.out.println("Testes executados com sucesso");
        } else {
+           System.out.println("__________________________________");
            System.out.println("Os seguintes testes falharam: ");
+           System.out.println("Total de testes que falharam = " + totalFalhas);
 
        }
   }
