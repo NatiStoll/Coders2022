@@ -1,4 +1,4 @@
-package aula3.a3e3maquinavendas;
+package aula4.vendasmetodo;
 
 public enum BebidasSw {
 //

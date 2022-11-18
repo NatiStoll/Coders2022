@@ -1,9 +1,11 @@
-package aula3.a3e3maquinavendas;
+package nope;
+
+import aula3.a3e3maquinavendas.BebidasSw;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class A3E3MVendasSwitch {
+public class teste {
 
     public static void main(String[] args) {
 
@@ -12,7 +14,7 @@ public class A3E3MVendasSwitch {
         System.out.println("\n<<<<<<MÁQUINA DE VENDA DE BEBIDAS>>>>>>\n");
 
         System.out.println("Opções de bebidas: ");
-        System.out.printf("%d - %s valor - R$ %.2f %n" , BebidasSw.COCA_COLA.ordinal(), BebidasSw.COCA_COLA.getNome(), BebidasSw.COCA_COLA.getValor());
+        System.out.printf("%d - %s valor - R$ %.2f %n" , BebidasSw.COCA_COLA.getIndice(), BebidasSw.COCA_COLA.getNome(), BebidasSw.COCA_COLA.getValor());
         System.out.printf("%d - %s valor - R$ %.2f %n" , BebidasSw.COCA_COLA_ZERO.getIndice(), BebidasSw.COCA_COLA_ZERO.getNome(), BebidasSw.COCA_COLA_ZERO.getValor());
         System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.PEPSI.getIndice(), BebidasSw.PEPSI.getNome(), BebidasSw.PEPSI.getValor());
         System.out.printf("%d - %s valor - R$ %.2f %n", BebidasSw.GUARANA.getIndice(), BebidasSw.GUARANA.getNome(), BebidasSw.GUARANA.getValor());
@@ -32,14 +34,15 @@ public class A3E3MVendasSwitch {
                 System.out.println("Opção invalida. Digite novamente:");
             }
         }
-        while (opcaoSelecionada == 0);
+        while (verificaIndice(opcaoSelecionada) == true);
+
 
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<< PEDIDO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
 
         switch (opcaoSelecionada){
             case 1 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" , BebidasSw.COCA_COLA.getNome(), BebidasSw.COCA_COLA.getValor());
-            case 2 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" , BebidasSw.COCA_COLA_ZERO.getNome(), BebidasSw.COCA_COLA_ZERO.getValor());
+            case 2 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" ,BebidasSw.COCA_COLA_ZERO.getNome(), BebidasSw.COCA_COLA_ZERO.getValor());
             case 3 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" , BebidasSw.PEPSI.getNome(), BebidasSw.PEPSI.getValor());
             case 4 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" , BebidasSw.GUARANA.getNome(), BebidasSw.GUARANA.getValor());
             case 5 -> System.out.printf("%n Bebida selecionada: %s %n Valor - R$ %.2f %n" , BebidasSw.FANTA.getNome(), BebidasSw.FANTA.getValor());
@@ -50,4 +53,16 @@ public class A3E3MVendasSwitch {
         sc.close();
 
     }
+
+    private static boolean verificaOperador (char operador){
+        return ("+-*/".contains(String.valueOf(operador)));
+    }
+
+    private static boolean verificaIndice (int indice){
+        return ("[0-6]*".contains(String.valueOf(indice)));
+    }
+
+
 }
+
+

@@ -3,7 +3,7 @@ package aula3;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class A3E2VotoTernario2 {
+public class A3E2VotoTernario {
 
     public static void main(String[] args) {
 

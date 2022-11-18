@@ -1,4 +1,6 @@
-package aula3.a3e3maquinavendas;
+package aula4.vendasmetodo;
+
+import aula3.a3e3maquinavendas.BebidasSw;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
