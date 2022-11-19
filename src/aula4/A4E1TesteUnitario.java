@@ -22,8 +22,8 @@ public class A4E1TesteUnitario {
     static void testeUnitarioVoto() {
         //array com idades para testar
         int[] idadesTestar = {18, 70, 16, 16, 71, 17, 15, -15, 16}; //com 2 falhas
-        int[] idadesTestar = {6, 70, 16, 16, 44, 17, 65, -15, 44}; //com 5 falhas
-        int[] idadesTestar = {18, 70, 34, 16, 71, 100, 15, -15, 4}; //todos sucesso
+//        int[] idadesTestar = {6, 70, 16, 16, 44, 17, 65, -15, 44}; //com 5 falhas
+//        int[] idadesTestar = {18, 70, 34, 16, 71, 100, 15, -15, 4}; //todos sucesso
 
         //array com resultados esperados
         String[] saidasEsperadas = {"Voto obrigatório", "Voto obrigatório", "Voto obrigatório",
@@ -34,7 +34,6 @@ public class A4E1TesteUnitario {
         int totalFalhas = 0;
 
         String[] arrayErrados = new String[idadesTestar.length]; //armazenar os testes errados no array
-
 
         for (int i = 0; i < idadesTestar.length; i++) { // percorrer arrays
 
@@ -48,13 +47,16 @@ public class A4E1TesteUnitario {
         }
 
         if (totalFalhas == 0) {
-            System.out.println("__________________________________");
-            System.out.println("Testes executados com sucesso");
+            System.out.println("\n-----------------------------------------------------------------");
+            System.out.println("----------------  Testes executados com sucesso  ----------------");
+            System.out.println("-----------------------------------------------------------------");
         } else {
-            System.out.println("\n--------------------------------------------------------------");
-            System.out.println("----------------Os seguintes testes falharam: ----------------");
-            System.out.println("--------------------------------------------------------------");
+            System.out.println("------------------------");
             System.out.println("Total de falhas: " + totalFalhas + "\n");
+            System.out.println("\n---------------------------------------------------------------");
+            System.out.println("--------------  Os seguintes testes falharam:  ----------------");
+            System.out.println("---------------------------------------------------------------");
+
         }
 
         for (int i = 0; i < arrayErrados.length; i++) {
